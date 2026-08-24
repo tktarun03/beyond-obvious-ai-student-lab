@@ -1,8 +1,55 @@
 # Beyond the Obvious AI Student Lab
 
+![Portal preview](./docs/portal-screenshot.png)
+
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20.11-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/license-MIT-2ea44f)](./LICENSE)
+
 Five practical AI engineering starter projects for students who want proof, not certificates.
 
 This repository is a TypeScript monorepo for learning how production-minded AI apps are built: validation, authentication, data ownership, cost limits, upload safety, observability, evaluation, and accessible UI patterns are treated as part of the product rather than optional polish.
+
+> **Repository status:** The shared engineering foundation is working. The five project folders are intentionally scaffolded for students to implement the product screens and vertical slices.
+
+## Navigate
+
+| Start here | Open |
+| --- | --- |
+| Run the catalogue portal | `npm run dev` -> [localhost:3000](http://localhost:3000) |
+| Understand the architecture | [Architecture notes](./docs/architecture) |
+| Follow the learning sequence | [Learning path](./docs/learning-path) |
+| Prepare for interviews | [Interview guide](./docs/interview-guide) |
+| Deploy a project | [Deployment notes](./docs/deployment) |
+
+## How It Fits Together
+
+```mermaid
+flowchart LR
+  UI[Next.js app] --> V[Validation]
+  V --> A[Auth boundary]
+  A --> AI[AI provider]
+  A --> DB[Database boundary]
+  AI --> O[Observability]
+  DB --> O
+  O --> E[Evaluation]
+```
+
+Every project follows the same boundary-first shape: validate untrusted input, authenticate the actor, call shared AI and database abstractions, record useful telemetry, and prove behavior with deterministic evals.
+
+<details>
+<summary><strong>Fast path: run, inspect, verify</strong></summary>
+
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+# Open http://localhost:3000
+npm run verify
+```
+
+Use `AI_MODE=mock`, `DB_MODE=memory`, and `AUTH_MODE=dev` for a zero-cost local setup. No cloud credentials are required for the default path.
+</details>
 
 ## Quick Start
 
@@ -50,7 +97,11 @@ This repo currently has a working monorepo foundation:
 - The portal catalogue data exists and describes all five projects.
 - Each project workspace exists with Next.js, Tailwind, configuration, and a small eval runner.
 
-Important: the five project apps do not yet have real `src/app/page.tsx` screens. They build successfully, but they currently only serve the scaffold/default 404 route. Treat the project folders as ready foundations for the actual app implementations.
+> **Known limitation:** The five project apps do not yet have real `src/app/page.tsx` screens. They build successfully, but currently serve the scaffold/default 404 route. Treat the project folders as ready foundations for the actual app implementations.
+
+## Live Preview
+
+The screenshot above is captured from the running portal with the default local configuration. Start it with `npm run dev` to explore the current catalogue interactively.
 
 ## What Is Inside
 
@@ -82,6 +133,8 @@ beyond-obvious-ai-student-lab/
 ```
 
 ## The Five Projects
+
+Each project is an independent Next.js workspace with its own port, eval runner, and implementation surface.
 
 | Project                            |   Port | Goal                                                                                                       |
 | ---------------------------------- | -----: | ---------------------------------------------------------------------------------------------------------- |
