@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The design system loads after Tailwind's base so its resets win where they
+   disagree — the token file is the authority on typography and colour. */
+@import '@lab/ui/styles.css';
