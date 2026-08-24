@@ -1,0 +1,6 @@
+node_modules
+.next
+dist
+coverage
+package-lock.json
+projects/04-engineering-agent/sample-repo

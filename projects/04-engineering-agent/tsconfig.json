@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@lab/ai": ["../../packages/ai/src/index.ts"],
+      "@lab/auth": ["../../packages/auth/src/index.ts"],
+      "@lab/database": ["../../packages/database/src/index.ts"],
+      "@lab/observability": ["../../packages/observability/src/index.ts"],
+      "@lab/shared": ["../../packages/shared/src/index.ts"],
+      "@lab/ui": ["../../packages/ui/src/index.ts"],
+      "@lab/validation": ["../../packages/validation/src/index.ts"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "../../next-env.d.ts", "next-env.d.ts", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", ".next"]
+}

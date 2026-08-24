@@ -1,0 +1,186 @@
+/* ==========================================================================
+   BEYOND THE OBVIOUS — DESIGN TOKENS v0.1
+
+   Adapted from the Lounge Secreto design system v0.1 (unaffiliated; brand
+   names and third-party marks removed). What was borrowed is the *thesis*,
+   because it transfers exactly:
+
+     "Expensive enough to be true. Open enough to believe."
+
+   That system had to sell something so cheap it looked fraudulent, so it made
+   transparency structural rather than decorative. An AI product has the same
+   problem wearing different clothes: a fluent, confident answer is the cheapest
+   thing a language model produces, and the reader cannot tell a grounded claim
+   from a fabricated one by looking at it.
+
+   So the two surface modes carry meaning, not preference:
+
+     .deck    — deep petrol dark. The product. What the AI produced, the chat,
+                the extraction, the recommendation. The claim.
+     .ledger  — glass grey light. The evidence. Citations, eval scores, audit
+                history, confidence, security notes, architecture. The receipts.
+
+   Switching surface tells the reader the register changed, from "here is what
+   the system says" to "here is why you may believe it". Never mix them inside
+   one section.
+
+   Two colours are load-bearing and must never be used decoratively:
+     --lab-verified  something the SYSTEM confirmed (grounded, cited, passing)
+     --lab-caution   something UNVERIFIED (AI interpretation, low confidence)
+   Green that lies is the most expensive mistake this system can make.
+   ========================================================================== */
+
+:root {
+  /* ---- BRAND ---------------------------------------------------------
+     Amber is lamplight and a departure board, not gold leaf. Black-and-gold
+     is what every "premium AI" landing page does, and it is the first thing
+     a low-effort clone copies. */
+  --lab-amber-600: #c87f1e;
+  --lab-amber-500: #e29a32; /* primary accent, CTA fill */
+  --lab-amber-400: #f0b45c;
+  --lab-amber-200: #f7dcae;
+  --lab-amber-glow: rgba(226, 154, 50, 0.16);
+
+  /* ---- SURFACE: DECK (dark) ---------------------------------------- */
+  --lab-deck-000: #07161a; /* page */
+  --lab-deck-100: #0c2027; /* surface */
+  --lab-deck-200: #122e37; /* raised: inputs, code */
+  --lab-deck-300: #1b4048; /* hairline */
+  --lab-deck-400: #2c5c66; /* stroke, muted control border */
+
+  /* ---- SURFACE: LEDGER (light) ------------------------------------- */
+  --lab-frost-000: #f6f8f8; /* page */
+  --lab-frost-100: #edf1f1; /* raised */
+  --lab-frost-200: #dfe6e6; /* hairline */
+  --lab-frost-300: #c8d3d3; /* stroke */
+
+  /* ---- TEXT --------------------------------------------------------- */
+  --lab-text-hi: #f2f6f6;
+  --lab-text-mid: #a9bcbe;
+  --lab-text-low: #7a9498;
+  --lab-ink-hi: #0a1c21;
+  --lab-ink-mid: #3e5359;
+  --lab-ink-low: #6b8085;
+
+  /* ---- SEMANTIC ------------------------------------------------------ */
+  --lab-verified: #4fb286; /* grounded, cited, passing, confirmed */
+  --lab-caution: #c4593f; /* unverified, failing, the expensive path */
+  --lab-info: #6ba3b0; /* neutral system information, guest/secondary */
+  --lab-focus: #8ad8e6; /* deliberately outside the brand palette */
+
+  /* ---- TYPE ----------------------------------------------------------
+     Three voices, three jobs. Display speaks; body instructs; data counts. */
+  --lab-font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --lab-font-body: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --lab-font-data: 'Azeret Mono', ui-monospace, 'Cascadia Code', Menlo, monospace;
+
+  --lab-t-display: clamp(2.25rem, 1.6rem + 3.2vw, 3.75rem);
+  --lab-t-h1: clamp(1.875rem, 1.4rem + 2.2vw, 2.75rem);
+  --lab-t-h2: clamp(1.375rem, 1.15rem + 1.2vw, 1.875rem);
+  --lab-t-h3: 1.25rem;
+  --lab-t-body-lg: 1.0625rem;
+  --lab-t-body: 1rem;
+  --lab-t-sm: 0.875rem;
+  --lab-t-xs: 0.75rem;
+  --lab-t-eyebrow: 0.6875rem;
+
+  /* ---- SPACE (4px base) --------------------------------------------- */
+  --lab-space-1: 4px;
+  --lab-space-2: 8px;
+  --lab-space-3: 12px;
+  --lab-space-4: 16px;
+  --lab-space-5: 24px;
+  --lab-space-6: 32px;
+  --lab-space-7: 48px;
+  --lab-space-8: 64px;
+  --lab-space-9: 96px;
+
+  /* ---- RADIUS --------------------------------------------------------
+     Buttons are radius 10, not pills. A pill reads as a consumer app; the
+     reference object here is a document with machined corners. */
+  --lab-radius-1: 6px;
+  --lab-radius-2: 10px;
+  --lab-radius-3: 16px;
+  --lab-radius-full: 999px;
+
+  /* ---- ELEVATION -----------------------------------------------------
+     On a dark surface, elevation is LIGHT (a top highlight), not shadow.
+     Dark UIs that lift with drop shadows read as flat. */
+  --lab-lift-1: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --lab-lift-2: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.45);
+  --lab-lift-3: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 24px 60px rgba(0, 0, 0, 0.55);
+  --lab-lift-day-1: 0 1px 2px rgba(10, 28, 33, 0.08);
+  --lab-lift-day-2: 0 8px 24px rgba(10, 28, 33, 0.1);
+
+  /* ---- MOTION --------------------------------------------------------
+     Motion is allowed in exactly three places: a state change on a control,
+     an accordion opening, and a strip cell filling. Nothing animates on
+     scroll. A product that has to prove it is serious does not juggle. */
+  --lab-dur-1: 120ms;
+  --lab-dur-2: 200ms;
+  --lab-dur-3: 360ms;
+  --lab-ease-out: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --lab-ease-punch: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---- LAYOUT --------------------------------------------------------- */
+  --lab-container: 1140px;
+  --lab-gutter: 24px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --lab-gutter: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --lab-dur-1: 0ms;
+    --lab-dur-2: 0ms;
+    --lab-dur-3: 0ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   SURFACE MODES
+   Components read --surface / --hairline / --text-primary, never the raw ramp.
+   That indirection is what lets one component work on both surfaces.
+   ========================================================================== */
+
+.deck {
+  background: var(--lab-deck-000);
+  color: var(--lab-text-hi);
+  --surface: var(--lab-deck-100);
+  --raised: var(--lab-deck-200);
+  --hairline: var(--lab-deck-300);
+  --stroke: var(--lab-deck-400);
+  --text-primary: var(--lab-text-hi);
+  --text-secondary: var(--lab-text-mid);
+  --text-tertiary: var(--lab-text-low);
+  --accent: var(--lab-amber-500);
+  --accent-text: var(--lab-amber-400);
+  --lift: var(--lab-lift-2);
+}
+
+.ledger {
+  background: var(--lab-frost-000);
+  color: var(--lab-ink-hi);
+  --surface: #ffffff;
+  --raised: var(--lab-frost-100);
+  --hairline: var(--lab-frost-200);
+  --stroke: var(--lab-frost-300);
+  --text-primary: var(--lab-ink-hi);
+  --text-secondary: var(--lab-ink-mid);
+  --text-tertiary: var(--lab-ink-low);
+  --accent: var(--lab-amber-600);
+  --accent-text: var(--lab-amber-600);
+  --lift: var(--lab-lift-day-1);
+}
