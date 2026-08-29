@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Archivo:wght@400;500;600&family=Azeret+Mono:wght@400;500&display=swap"
         />
       </head>
-      <body className="deck">
+      <body className="deck" suppressHydrationWarning>
         <SkipLink targetId="main" />
         {children}
       </body>
