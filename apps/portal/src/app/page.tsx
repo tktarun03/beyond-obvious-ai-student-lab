@@ -1,5 +1,7 @@
 import { Eyebrow, Pill, StatTile } from '@lab/ui';
 import { PROJECTS } from '../lib/catalogue';
+import { ProjectCard } from '../components/ProjectCard';
+import { ServerStatusPanel } from '../components/ServerStatusPanel';
 
 export default function PortalPage() {
   return (
@@ -37,31 +39,12 @@ export default function PortalPage() {
 
         <div className="grid gap-5 md:grid-cols-2">
           {PROJECTS.map((project) => (
-            <article key={project.slug} className="lab-card flex flex-col justify-between gap-8">
-              <div>
-                <div className="flex items-center justify-between gap-4">
-                  <Eyebrow index={project.number}>{project.difficulty}</Eyebrow>
-                  <span className="font-mono text-xs text-[var(--ink-muted)]">:{project.port}</span>
-                </div>
-                <h3 className="mt-5 text-2xl">{project.name}</h3>
-                <p className="mt-3 text-[var(--ink-muted)]">{project.problem}</p>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--line)] pt-5">
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 3).map((technology) => (
-                    <Pill key={technology} tone="neutral">
-                      {technology}
-                    </Pill>
-                  ))}
-                </div>
-                <span className="font-mono text-xs text-[var(--ink-muted)]">
-                  {project.estimatedHours}
-                </span>
-              </div>
-            </article>
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
+
+      <ServerStatusPanel />
 
       <footer className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--line)] pt-6 text-sm text-[var(--ink-muted)]">
         <span>Learn. Build. Prove.</span>
