@@ -1,0 +1,28 @@
+name: Bug or broken example
+description: Help us reproduce a code, setup or learning-material problem.
+title: '[Bug] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the expected behavior and the affected file or demo ID.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Smallest reproduction
+      description: Commands, synthetic input and error output. Remove credentials and personal data.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS, Node/npm version, browser, commit SHA
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or proposed correction
+      description: Link authoritative sources for model or technical documentation corrections.

@@ -59,7 +59,7 @@ Large messy pile shrinks into four cards: `CODE`, `EVIDENCE`, `CONSTRAINTS`, `DE
 ## Scene 05 — Five reasoning levels
 
 **Dialogue**  
-“Astra supports low, medium, high, x-high and max reasoning effort. Match the effort to the difficulty, risk and verification needed.”
+“The Astra API supports low, medium, high, x-high and max reasoning effort. Match the effort to the difficulty, risk and verification needed.”
 
 **Visual**  
 Five fixed steps: `LOW -> MEDIUM -> HIGH -> XHIGH -> MAX`.
@@ -305,10 +305,10 @@ Redacted credentials and anonymized sample data.
 ## Scene 24 — GitHub cheatsheet
 
 **Dialogue**  
-“I have added the full prompt cheatsheet, ten demos, master templates and an effort-selection code example to the GitHub learning repo.”
+“Our GitHub repo now includes ten complete exercises, an interactive prompt lab, reusable templates and checks you can run without an API key.”
 
 **Visual**  
-Stable repository tree showing: `CHEATSHEET`, `10 LIVE DEMOS`, `MASTER PROMPTS`, `prompt router`.
+Stable repository tree showing: `PROMPT LAB`, `10 EXERCISES`, `TEMPLATES`, `OFFLINE CHECKS`.
 
 ---
 

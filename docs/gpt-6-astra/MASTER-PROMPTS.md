@@ -1,6 +1,6 @@
 # GPT-6 Astra — Master Prompt Library
 
-These templates are intentionally direct. Replace bracketed fields with real context.
+These templates are intentionally direct. Replace bracketed fields with relevant, approved context; omit sections that do not help. [Runnable examples](10-LIVE-DEMO-PROMPTS.md) include complete synthetic inputs. [Measure results](EVALUATION.md) before choosing more effort.
 
 ## Master prompt — engineering analysis
 
@@ -33,7 +33,7 @@ WORKING RULES
 - Distinguish facts from assumptions.
 - Prefer the smallest safe solution before proposing a rewrite.
 - Surface trade-offs and failure modes.
-- If a critical unknown materially changes the solution, state the assumption used.
+- If a critical unknown materially changes the solution, ask a focused question before committing to it; otherwise proceed with a stated assumption.
 - Do not reveal or fabricate hidden chain-of-thought; provide concise conclusions and evidence instead.
 
 VERIFY
