@@ -1,0 +1,28 @@
+name: Learning contribution or translation
+description: Propose an exercise, translation, measured comparison or documentation improvement.
+title: '[Community] '
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Who will this help, and what will they learn?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Proposed example and how to verify it
+      description: Include a synthetic fixture, expected checks, estimated time and sources where relevant.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Contribution type
+      options:
+        - Exercise or code
+        - Tamil translation
+        - Another language
+        - Documentation
+        - Reproducible evaluation
+        - Accessibility

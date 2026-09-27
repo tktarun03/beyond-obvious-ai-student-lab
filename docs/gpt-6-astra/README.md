@@ -1,51 +1,82 @@
-# GPT-6 Astra — Practical Reasoning & Context Guide
+# GPT-6 Astra — the practical engineering prompt lab
 
-A practical, IT-centric learning module for the **Beyond the Obvious AI Student Lab**.
+**Learn to give useful context, verify answers and spend effort where it matters.**
+Built by [Arunkumar Thamilarasu](https://github.com/tktarun03) for the
+[Beyond the Obvious](https://www.youtube.com/@BeyondObviousArun) community.
+India-focused examples sit alongside global engineering problems. All fixtures are synthetic.
 
-This guide teaches how to get stronger results from GPT-6 Astra without trying to expose or reproduce hidden chain-of-thought. The focus is on the parts users can control:
+## Start in five minutes
 
-- task framing
-- context selection
-- constraints
-- output contracts
-- verification
-- tool use
-- reasoning effort
-- iteration and evaluation
+From the repository root, with Node.js and npm installed:
 
-## Current model facts
+```bash
+npm ci
+npm run astra -- --list
+npm run astra -- --demo 01-payment-retry
+```
 
-According to OpenAI's current model documentation, `gpt-6-astra` is positioned for hard end-to-end work including complex reasoning, coding, research, computer use, and document creation. It supports reasoning effort values `low`, `medium`, `high`, `xhigh`, and `max`, and OpenAI recommends the Responses API for reasoning workloads.
+Copy the generated prompt into your chosen assistant and compare its answer with the exercise's review criteria. To browse, search and copy visually:
 
-> Always verify current model limits and API behavior against the official OpenAI docs before production use. Model capabilities, pricing and interfaces can change.
+```bash
+npm run dev
+```
 
-## The core idea
+Open [the local prompt lab](http://localhost:3000/prompt-lab).
+The CLI and portal generate prompts locally; they make **no AI API calls** and require no key.
+Using a separate AI service may require an account and incur that service's charges.
+The lab does not configure your ChatGPT settings or automatically change model effort.
 
-Do **not** ask the model to dump its hidden reasoning or to "think step by step". Instead give it:
+## Choose your route
 
-1. **Goal** — what outcome you need.
-2. **Context** — only the evidence and background that matter.
-3. **Constraints** — technology, policy, time, budget, security, compatibility.
-4. **Success criteria** — what "done" means.
-5. **Verification** — tests, citations, checks, edge cases, counterexamples.
-6. **Output contract** — exact structure you want back.
-7. **Reasoning effort** — match effort to task difficulty instead of always choosing max.
+| Your goal                                      | Resource                                                    | Time                 |
+| ---------------------------------------------- | ----------------------------------------------------------- | -------------------- |
+| Get a useful answer with less back-and-forth   | [Cheatsheet](CHEATSHEET.md)                                 | 10 min               |
+| Practice with code, logs and acceptance checks | [Ten reproducible demos](10-LIVE-DEMO-PROMPTS.md)           | 15–25 min each       |
+| Lead a college or community session            | [Workshop](WORKSHOP.md)                                     | 60 min               |
+| Measure quality, effort and cost fairly        | [Evaluation workbook](EVALUATION.md)                        | 20 min setup         |
+| Reuse a task-specific template                 | [Master prompts](MASTER-PROMPTS.md)                         | 5 min                |
+| Inspect the pure TypeScript helpers            | [Router](../../examples/gpt-6-astra/astra-prompt-router.ts) | 15 min               |
+| Create the episode                             | [25-scene script](EPISODE-25-SCENES.md)                     | Production reference |
+| Verify model-specific claims                   | [Sources and freshness](SOURCES.md)                         | Before API use       |
 
-## Suggested learning path
+## What works today
 
-1. Read [`CHEATSHEET.md`](./CHEATSHEET.md).
-2. Run through [`10-LIVE-DEMO-PROMPTS.md`](./10-LIVE-DEMO-PROMPTS.md).
-3. Reuse templates in [`MASTER-PROMPTS.md`](./MASTER-PROMPTS.md).
-4. Inspect the task router example in [`../../examples/gpt-6-astra/astra-prompt-router.ts`](../../examples/gpt-6-astra/astra-prompt-router.ts).
+- Ten complete prompts, each with synthetic input, constraints and four human review criteria.
+- Searchable portal with copy fallback, mobile layout and keyboard-friendly controls.
+- CLI text/JSON export, with clear errors for invalid exercise IDs and flags.
+- Deterministic routing, content and browser checks in CI.
+- No measured live-model scores or guaranteed cost savings are claimed.
 
-## Enterprise safety note
+```bash
+npm run astra -- --demo 02-exam-portal --json
+npm run --silent astra -- --demo 08-pr-review > prompt.txt
+npm run astra:check
+npm run verify
+```
 
-Never paste confidential company source code, internal credentials, customer data, non-public architecture, security incidents, proprietary documents, contracts, private employee data, or unreleased roadmap information into a public or unapproved AI workflow. Replace real identifiers with synthetic examples and follow your organization's approved AI/data-handling policy.
+The five AI application workspaces elsewhere in this repository remain student scaffolds.
+Their optional live provider is separate from this offline Astra module.
 
-## Public-content disclaimer
+## The working method
 
-Personal perspectives on technology, AI, careers and the digital future. Views expressed are my own and do not represent my employer or any organization I am associated with.
+1. Define the outcome and acceptance criteria.
+2. Provide the smallest set of relevant evidence and constraints.
+3. Choose code, an efficient model, or Astra based on the task.
+4. Ask for concise conclusions, evidence and verification results.
+5. Check the answer; improve the missing context before raising effort.
 
-## License
+The router is a **local teaching heuristic**, not OpenAI guidance or a security control.
+Higher effort cannot replace authorization, human review or evidence. See the
+[evaluation workbook](EVALUATION.md) before interpreting an effort suggestion as an optimum.
 
-Use under the repository's MIT license.
+## Community shout-out
+
+To students in Tamil Nadu, across India and around the world, and to the teachers,
+engineers, testers and translators helping them: **thank you for learning in public and
+making the next person's first step easier.** Found a better example? Contribute a
+reproduction and a check others can repeat. [Join the community](../../COMMUNITY.md).
+
+Question. Explore. Rethink.
+
+Personal educational project; not an official OpenAI resource or an employer publication.
+Use synthetic data in public examples. [MIT license](../../LICENSE).

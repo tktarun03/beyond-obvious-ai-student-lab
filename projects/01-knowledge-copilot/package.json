@@ -6,7 +6,7 @@
     "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start -p 3001",
-    "eval": "tsx evals/run.ts"
+    "eval": "node --import tsx evals/run.ts"
   },
   "dependencies": {
     "@lab/ai": "*",

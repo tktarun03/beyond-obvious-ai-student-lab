@@ -21,9 +21,9 @@ export function ProjectCard({ project }: { project: ProjectEntry }) {
             </div>
           </div>
           <h3 className="mt-5 text-2xl">{project.name}</h3>
-          <p className="mt-3 text-[var(--ink-muted)]">{project.problem}</p>
+          <p className="mt-3 text-[var(--text-secondary)]">{project.problem}</p>
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--line)] pt-5">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--hairline)] pt-5">
           <div className="flex flex-wrap gap-2">
             {project.technologies.slice(0, 3).map((technology) => (
               <Pill key={technology} tone="neutral">
@@ -31,7 +31,7 @@ export function ProjectCard({ project }: { project: ProjectEntry }) {
               </Pill>
             ))}
           </div>
-          <span className="font-mono text-xs text-[var(--ink-muted)]">
+          <span className="font-mono text-xs text-[var(--text-secondary)]">
             {project.estimatedHours}
           </span>
         </div>
