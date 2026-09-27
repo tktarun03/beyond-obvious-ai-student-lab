@@ -44,19 +44,21 @@ export function PromptLab() {
   return (
     <div>
       <div className="mb-6 grid gap-4 sm:grid-cols-[1fr_180px]">
-        <label className="grid gap-2 text-sm">
-          Search exercises
+        <div className="grid gap-2 text-sm">
+          <label htmlFor="exercise-search">Search exercises</label>
           <input
+            id="exercise-search"
             className="rounded-lg border border-[var(--hairline)] bg-white px-4 py-3 text-[var(--text-primary)]"
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Try payment, accessibility or latency"
           />
-        </label>
-        <label className="grid gap-2 text-sm">
-          Context
+        </div>
+        <div className="grid gap-2 text-sm">
+          <label htmlFor="context-filter">Context</label>
           <select
+            id="context-filter"
             className="rounded-lg border border-[var(--hairline)] bg-white px-4 py-3 text-[var(--text-primary)]"
             value={region}
             onChange={(event) => setRegion(event.target.value)}
@@ -65,7 +67,7 @@ export function PromptLab() {
             <option>India</option>
             <option>Global</option>
           </select>
-        </label>
+        </div>
       </div>
       <div className="grid items-start gap-8 lg:grid-cols-[280px_1fr]">
         <nav aria-label="Prompt exercises">
