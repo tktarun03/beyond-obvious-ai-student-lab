@@ -25,7 +25,7 @@ export default defineConfig({
     // at the top of the file — keeping the fast path fast.
     environment: 'node',
     setupFiles: [path.join(root, 'test/setup.ts')],
-    include: ['{packages,apps,projects}/**/*.{test,spec}.{ts,tsx}'],
+    include: ['{packages,apps,projects,examples}/**/*.{test,spec}.{ts,tsx}'],
     exclude: ['**/node_modules/**', '**/.next/**', '**/e2e/**', '**/sample-repo/**'],
     coverage: {
       provider: 'v8',

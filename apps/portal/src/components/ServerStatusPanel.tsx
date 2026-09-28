@@ -11,16 +11,21 @@ interface ServerStatus {
   responseTime?: number;
 }
 
-export function ServerStatusPanel() {
-  const initialServers: ServerStatus[] = [
-    { port: 3000, name: 'Portal (Catalogue)', url: 'http://localhost:3000', status: 'down' },
-    { port: 3001, name: '01 - AI Knowledge Copilot', url: 'http://localhost:3001', status: 'down' },
-    { port: 3002, name: '02 - Document Intelligence', url: 'http://localhost:3002', status: 'down' },
-    { port: 3003, name: '03 - India Voice Assistant', url: 'http://localhost:3003', status: 'down' },
-    { port: 3004, name: '04 - Engineering Agent', url: 'http://localhost:3004', status: 'down' },
-    { port: 3005, name: '05 - Data Decision Assistant', url: 'http://localhost:3005', status: 'down' },
-  ];
+const initialServers: ServerStatus[] = [
+  { port: 3000, name: 'Portal (Catalogue)', url: 'http://localhost:3000', status: 'down' },
+  { port: 3001, name: '01 - AI Knowledge Copilot', url: 'http://localhost:3001', status: 'down' },
+  { port: 3002, name: '02 - Document Intelligence', url: 'http://localhost:3002', status: 'down' },
+  { port: 3003, name: '03 - India Voice Assistant', url: 'http://localhost:3003', status: 'down' },
+  { port: 3004, name: '04 - Engineering Agent', url: 'http://localhost:3004', status: 'down' },
+  {
+    port: 3005,
+    name: '05 - Data Decision Assistant',
+    url: 'http://localhost:3005',
+    status: 'down',
+  },
+];
 
+export function ServerStatusPanel() {
   const [servers, setServers] = useState<ServerStatus[]>(initialServers);
 
   useEffect(() => {
