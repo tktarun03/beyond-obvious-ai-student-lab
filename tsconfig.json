@@ -39,6 +39,8 @@
     "plugins": [{ "name": "next" }]
   },
   "include": [
+    "examples/**/*.ts",
+    "scripts/**/*.ts",
     "packages/**/*.ts",
     "packages/**/*.tsx",
     "apps/**/*.ts",
