@@ -13,6 +13,22 @@ This guide teaches how to get stronger results from GPT-6 Astra without trying t
 - reasoning effort
 - iteration and evaluation
 
+## Run the offline exercises
+
+From the repository root:
+
+```bash
+npm ci
+npm run astra -- --list
+npm run astra -- --demo 01-payment-retry
+npm run --silent astra -- --demo 02-exam-portal --json
+npm run astra:check
+```
+
+The CLI prints complete prompts with synthetic inputs; JSON includes the answer-review
+criteria. It makes no model calls and needs no API key. The effort router is a local
+teaching heuristic, not a measured benchmark or a safety control.
+
 ## Current model facts
 
 According to OpenAI's current model documentation, `gpt-6-astra` is positioned for hard end-to-end work including complex reasoning, coding, research, computer use, and document creation. It supports reasoning effort values `low`, `medium`, `high`, `xhigh`, and `max`, and OpenAI recommends the Responses API for reasoning workloads.
