@@ -29,6 +29,13 @@ The CLI prints complete prompts with synthetic inputs; JSON includes the answer-
 criteria. It makes no model calls and needs no API key. The effort router is a local
 teaching heuristic, not a measured benchmark or a safety control.
 
+## Browse and copy in the portal
+
+Run `npm run dev` and open [the prompt lab](http://localhost:3000/prompt-lab).
+Search the same ten exercises, inspect the synthetic evidence, and copy a complete prompt.
+The portal also runs without an API key. Its browser checks run with
+`npm run e2e -- --project=portal` after installing Playwright Chromium.
+
 ## Current model facts
 
 According to OpenAI's current model documentation, `gpt-6-astra` is positioned for hard end-to-end work including complex reasoning, coding, research, computer use, and document creation. It supports reasoning effort values `low`, `medium`, `high`, `xhigh`, and `max`, and OpenAI recommends the Responses API for reasoning workloads.

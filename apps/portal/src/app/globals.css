@@ -3,3 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Keep the shared focus indicator visible on the light learning surfaces. */
+.ledger :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline-color: var(--lab-ink-mid);
+}

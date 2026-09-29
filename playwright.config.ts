@@ -14,6 +14,13 @@ export default defineConfig({
   retries: ci ? 1 : 0,
   workers: ci ? 1 : undefined,
   reporter: ci ? [['github'], ['html', { open: 'never' }]] : [['list']],
+  webServer: {
+    command: 'npm run dev --workspace=@lab/portal -- --hostname 127.0.0.1',
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: !ci,
+    timeout: 120_000,
+    env: { AI_MODE: 'mock', DB_MODE: 'memory', AUTH_MODE: 'dev', NEXT_TELEMETRY_DISABLED: '1' },
+  },
   use: {
     trace: 'on-first-retry',
     // Reduced motion is the default in e2e so animation never makes a test flaky
@@ -24,7 +31,7 @@ export default defineConfig({
     {
       name: 'portal',
       testMatch: 'apps/portal/e2e/**/*.spec.ts',
-      use: { ...devices['Desktop Chrome'], baseURL: 'http://localhost:3000' },
+      use: { ...devices['Desktop Chrome'], baseURL: 'http://127.0.0.1:3000' },
     },
     {
       name: '01-knowledge-copilot',
