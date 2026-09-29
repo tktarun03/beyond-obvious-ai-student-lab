@@ -31,9 +31,11 @@
     "e2e": "playwright test",
     "e2e:install": "playwright install --with-deps chromium",
     "eval": "npm run eval --workspaces --if-present",
-    "verify": "npm run lint && npm run typecheck && npm run test && npm run eval",
+    "verify": "npm run docs:check && npm run lint && npm run typecheck && npm run test && npm run eval",
     "astra:check": "vitest run examples/gpt-6-astra",
-    "astra": "node --import tsx examples/gpt-6-astra/cli.ts"
+    "astra": "node --import tsx examples/gpt-6-astra/cli.ts",
+    "astra:docs": "node --import tsx scripts/generate-astra-docs.ts",
+    "docs:check": "node --import tsx scripts/generate-astra-docs.ts --check"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
