@@ -74,7 +74,7 @@ Higher effort cannot replace authorization, human review or evidence. See the
 To students in Tamil Nadu, across India and around the world, and to the teachers,
 engineers, testers and translators helping them: **thank you for learning in public and
 making the next person's first step easier.** Found a better example? Contribute a
-reproduction and a check others can repeat. Share a small, reproducible improvement.
+reproduction and a check others can repeat. [Join the community](../../COMMUNITY.md).
 
 Question. Explore. Rethink.
 

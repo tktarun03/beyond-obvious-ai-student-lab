@@ -24,8 +24,6 @@ jobs:
       NEXT_TELEMETRY_DISABLED: 1
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
@@ -33,10 +31,7 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run verify
       - run: npm run build
-      - name: Check formatting of changed files
-        run: node scripts/check-changed-format.mjs
-        env:
-          FORMAT_BASE: ${{ github.event.pull_request.base.sha || github.event.before || 'HEAD^' }}
+      - run: npm run format:check
   browser:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -47,8 +42,6 @@ jobs:
       NEXT_TELEMETRY_DISABLED: 1
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
