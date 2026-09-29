@@ -41,4 +41,4 @@ Do not translate API identifiers or silently change the exercise's acceptance cr
 
 Ask each pair for the demo ID, their revised prompt, four check decisions, one mistake
 they caught and one improvement. A screenshot alone is not a reproducible result.
-A small correction or reproducible failure makes a useful first contribution.
+Use [Community](../../COMMUNITY.md) to find a first contribution. Sharing failures is useful.

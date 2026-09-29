@@ -23,4 +23,4 @@ features that already exist in the five project scaffolds.
 
 Treat live providers as an optional later integration. A paid model is not required to
 learn validation, ownership, error recovery, accessibility or reproducible evaluation.
-Bring back one small improvement with a reproducible check.
+Bring one small improvement back through [Contributing](../../CONTRIBUTING.md).

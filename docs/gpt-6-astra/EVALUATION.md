@@ -60,4 +60,4 @@ baseline measured on the same workload.
 7. Stop when the acceptance criteria are satisfied; avoid endless self-review loops.
 
 Record both wins and regressions. Never describe the router's recommendation as a
-measured optimum. Keep a sanitized report with enough detail for another learner to reproduce it.
+measured optimum. Share a sanitized report through the [contribution process](../../CONTRIBUTING.md).
