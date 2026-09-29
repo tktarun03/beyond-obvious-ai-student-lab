@@ -35,7 +35,7 @@
     "astra:check": "vitest run examples/gpt-6-astra",
     "astra": "node --import tsx examples/gpt-6-astra/cli.ts",
     "astra:docs": "node --import tsx scripts/generate-astra-docs.ts",
-    "docs:check": "node --import tsx scripts/generate-astra-docs.ts --check"
+    "docs:check": "node scripts/check-docs.mjs && node --import tsx scripts/generate-astra-docs.ts --check"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

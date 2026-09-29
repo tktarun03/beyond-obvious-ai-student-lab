@@ -39,7 +39,7 @@ open [the prompt lab](http://localhost:3000/prompt-lab).
 2. Start another fresh conversation with its complete prompt. Keep model/version and settings constant.
 3. Show the supplied fixture alongside the answer. Check the four rubric items; do not award points for length or confidence.
 4. Try the stretch goal. Note which assumptions change and whether the assistant adapts.
-5. Record failures as well as successes in the evaluation notes.
+5. Record failures as well as successes in the [evaluation workbook](EVALUATION.md).
 
 For a cleaner experiment on prompt structure alone, give both conditions the same
 fixture and vary only the instructions. Do not present either comparison as a universal
@@ -59,7 +59,7 @@ model ranking. Never show real credentials, customer data or internal employer c
 - Demo 10: the embedded malicious ticket instruction is an injection exercise. Packaging tests cannot prove that an AI will resist it.
 
 Use [master prompts](MASTER-PROMPTS.md) for your own context and the
-workshop agenda for a group session.
+[workshop agenda](WORKSHOP.md) for a group session.
 
 <!-- BEGIN GENERATED EXERCISES -->
 
