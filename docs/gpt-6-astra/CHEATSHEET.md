@@ -1,5 +1,7 @@
 # GPT-6 Astra Prompting Cheatsheet
 
+Start with the short pattern below. Use only the sections that change the result; a longer prompt is not automatically better. Try the [runnable exercises](10-LIVE-DEMO-PROMPTS.md), then measure with the [evaluation workbook](EVALUATION.md).
+
 ## 1. The shortest high-quality prompt pattern
 
 ```text
@@ -30,7 +32,7 @@ For difficult tasks, this is usually better than repeatedly saying "think harder
 
 ---
 
-## 2. Maximum reusable prompt
+## 2. Extended template for complex work
 
 ```text
 ROLE
@@ -98,15 +100,17 @@ Be concise, technical and explicit. Prefer concrete evidence over generic advice
 
 ## 3. Reasoning-effort selector
 
-| Effort | Use when | Examples | Avoid when |
-| --- | --- | --- | --- |
-| `low` | task is clear and bounded | rewrite code comments, small regex, simple query, format conversion | architecture or ambiguous root-cause analysis |
-| `medium` | moderate engineering judgment | component refactor, API integration plan, test design | high-risk migrations with many unknowns |
-| `high` | multiple interacting constraints | production incident analysis, architecture trade-offs, migration strategy, large PR review | repetitive high-volume work where latency/cost dominates |
-| `xhigh` | unusually difficult multi-step work | cross-system redesign, complex performance diagnosis, research + implementation synthesis | routine tasks |
-| `max` | hardest end-to-end work where extra model work is justified | difficult novel engineering problem with significant verification | everyday coding, summaries, boilerplate, bulk classification |
+These are local teaching suggestions, not measured optima. The API supports the values below; ChatGPT controls depend on the product and account. Text in a prompt does not set an API parameter. See [official sources](SOURCES.md).
 
-**Rule:** increase effort only after improving the prompt, context and verification criteria.
+| Effort   | Use when                                                    | Examples                                                                                   | Avoid when                                                   |
+| -------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| `low`    | task is clear and bounded                                   | rewrite code comments, small regex, simple query, format conversion                        | architecture or ambiguous root-cause analysis                |
+| `medium` | moderate engineering judgment                               | component refactor, API integration plan, test design                                      | high-risk migrations with many unknowns                      |
+| `high`   | multiple interacting constraints                            | production incident analysis, architecture trade-offs, migration strategy, large PR review | repetitive high-volume work where latency/cost dominates     |
+| `xhigh`  | unusually difficult multi-step work                         | cross-system redesign, complex performance diagnosis, research + implementation synthesis  | routine tasks                                                |
+| `max`    | hardest end-to-end work where extra model work is justified | difficult novel engineering problem with significant verification                          | everyday coding, summaries, boilerplate, bulk classification |
+
+**Rule:** increase effort only after improving the prompt, context and verification criteria. High or critical risk always needs appropriate controls and review; low latency or high volume does not make the task low risk.
 
 ---
 

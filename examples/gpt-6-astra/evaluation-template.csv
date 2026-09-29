@@ -1,0 +1,1 @@
+run_id,scenario_id,prompt_commit,model_id,effort,condition,observed_at_utc,tools,elapsed_ms,attempts,input_tokens,output_tokens,reasoning_tokens,measured_cost,currency,pricing_source,check_1,check_2,check_3,check_4,correctness_0_2,evidence_0_2,constraints_0_2,verification_0_2,usability_0_2,accepted,reviewer,notes
