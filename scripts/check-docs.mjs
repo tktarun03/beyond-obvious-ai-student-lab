@@ -24,10 +24,11 @@ for (const file of files) {
     ...source.matchAll(/^\s*\[[^\]]+\]:\s*(\S+)/gm),
   ];
   for (const [, raw] of links) {
-    if (!raw || /^(?:[a-z][a-z\d+.-]*:|#|\/\/)/i.test(raw)) continue;
+    const destination = raw.replace(/^<|>$/g, '');
+    if (!destination || /^(?:[a-z][a-z\d+.-]*:|#|\/\/)/i.test(destination)) continue;
     let target;
     try {
-      target = decodeURIComponent(raw.replace(/^<|>$/g, '').split(/[?#]/)[0]);
+      target = decodeURIComponent(destination.split(/[?#]/)[0]);
     } catch {
       failures.push(`${file}: invalid encoded destination ${raw}`);
       continue;

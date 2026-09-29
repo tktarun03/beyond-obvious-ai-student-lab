@@ -10,9 +10,15 @@ npm run dev
 The portal and prompt lab work without credentials. The five project apps currently
 serve scaffold routes; add a real page and workflow before expecting a product demo.
 
-Next.js reads environment files from the app workspace. If you need overrides, copy
-`.env.example` into `apps/portal/.env.local` for the portal, or into the chosen project
-folder for that app. A root `.env.local` is not automatically loaded by these workspace
+Next.js reads environment files from the app workspace. If you need overrides for
+the portal, run this from the repository root:
+
+```bash
+cp .env.example apps/portal/.env.local
+```
+
+For a project app, copy the root `.env.example` to `.env.local` inside that project
+folder instead. A root `.env.local` is not automatically loaded by these workspace
 commands. CLI scripts need environment variables supplied by the shell or their runner.
 
 ## Validate a build
